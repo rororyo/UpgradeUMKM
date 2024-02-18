@@ -22,7 +22,7 @@ const Navbar = () => {
 
         {/* Right-aligned buttons */}
         
-        <div className="d-flex ml-auto">
+    <div className="d-flex ml-auto">
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
