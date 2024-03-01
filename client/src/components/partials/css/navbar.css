@@ -1,0 +1,23 @@
+.logo-img{
+    width: 154px;
+    height: 92.4px;
+}
+.navbar-bg{
+    background-color: rgba(249, 193, 100, 0.7);
+}
+
+.nav-text {
+    color: white !important;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+}
+.navbar-nav .nav-link {
+    margin-right: 51px;
+  }
+  
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 25px;
+  }
+  

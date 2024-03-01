@@ -5,13 +5,11 @@ import Navbar from "../../partials/Navbar.jsx";
 
 const Register = () => {
   const [values, setValues] = useState({
-    username: "",
     email: "",
     password: "",
   });
 
   const [notify, setNotify] = useState("");
-  const navigate = useNavigate();
 
   const apiUrl = "http://localhost:4000";
   async function handleSubmit(event) {
@@ -24,11 +22,11 @@ const Register = () => {
         setNotify("Error Registering User");
       }
     } catch (err) {
-      setNotify(err.message+' : ' + err.response.data);
+      setNotify(err.message + " : " + err.response.data);
     }
   }
   return (
-    <>
+    <div style={{backgroundImage:'url("/assets/images/auth/authbg.png")',minHeight:'100vh'}}>
       <Navbar />
       <div className="container mt-5">
         <h1>Register</h1>
@@ -39,23 +37,15 @@ const Register = () => {
               <div className="card-body">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                  {notify && (
-  <div className="alert alert-warning d-flex justify-content-between align-items-center">
-    <div>{notify}</div>
-    <button onClick={() => setNotify("")} className="btn-close"></button>
-  </div>
-)}
-
-
-                    <label htmlFor="username">Username</label>
-                    <input
-                      type="username"
-                      className="form-control"
-                      name="username"
-                      onChange={(e) =>
-                        setValues({ ...values, username: e.target.value })
-                      }
-                    />
+                    {notify && (
+                      <div className="alert alert-warning d-flex justify-content-between align-items-center">
+                        <div>{notify}</div>
+                        <button
+                          onClick={() => setNotify("")}
+                          className="btn-close"
+                        ></button>
+                      </div>
+                    )}
                   </div>
                   <div className="form-group">
                     <label htmlFor="email">Email</label>
@@ -93,7 +83,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

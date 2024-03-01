@@ -1,11 +1,12 @@
 import React from "react";
+import "./css/navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg navbar-bg">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          Upgrade UMKM
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Logo Upgrade UMKM"  className="logo-img"/>
         </a>
         <button
           className="navbar-toggler"
@@ -19,20 +20,18 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-
-        {/* Right-aligned buttons */}
         
     <div className="d-flex ml-auto">
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link active nav-text" aria-current="page" href="/">
                 Home
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle nav-text"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -74,18 +73,19 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/feedback">
+              <a className="nav-link nav-text" href="/feedback">
                 Feedback
               </a>
             </li>
           </ul>
+          <a className="btn btn-light me-2" href="/login">
+          <span style={{color:'rgba(72, 45, 0, 0.7)'}}> Login </span>
+          </a>
+          <a className="btn btn-outline-light" href="/register">
+          <span className=""> Register </span>
+          </a>
         </div>
-          <a className="btn btn-primary me-2" href="/login">
-            Login
-          </a>
-          <a className="btn btn-outline-primary" href="/register">
-            Register
-          </a>
+          
         </div>
       </div>
     </nav>

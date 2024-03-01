@@ -1,8 +1,8 @@
+//TODO: Auth Error handling
+
 import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import cors from 'cors';
-import Cookies from 'js-cookie';
 import { dbMiddleware } from "./dbsetup.js";
 import cookieParser from 'cookie-parser';
 
@@ -34,7 +34,7 @@ authApp.post("/register", async (req, res) => {
             res.status(400).send("User already exists");
         } else {
             const hash = await bcrypt.hash(password, saltRounds);
-            const result = await client.query("INSERT INTO users(email,username, password) VALUES($1, $2,$3) RETURNING *", [email,username, hash]);
+            const result = await client.query("INSERT INTO users(email, password) VALUES($1,$2) RETURNING *", [email, hash]);
             const user = result.rows[0];
             const token = generateToken(user);
             res.cookie("token", token);
