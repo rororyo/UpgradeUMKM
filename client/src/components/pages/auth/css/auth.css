@@ -1,0 +1,87 @@
+#title-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  font-size: 4rem;
+}
+
+#subtitle-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: white;
+}
+#auth-container {
+  background-color: rgba(182, 138, 70, 0.7);
+  min-height: 60vh;
+  border-radius: 47px;
+}
+#submit-button {
+  background-color: #305018;
+  height: 3.2rem;
+}
+#submit-label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#or-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: white;
+}
+#auth-text {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3rem;
+}
+#third-party-label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.auth-input {
+  min-width: 95%;
+  height: 3.2rem;
+  background-color: #c3c3c3 !important;
+  border-radius: 10px;
+  outline: none !important ;
+}
+
+.label-text {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.vertical-line {
+  border-left: 1px solid white;
+  height: 92%;
+  margin-top: 10px;
+}
+
+.auth-btn {
+  min-width: 95%;
+  height: 3.2rem;
+  border-radius: 10px;
+  margin-top: 27px !important;
+  background-color: white !important;
+  text-align: left !important;
+}
+.auth-logo {
+  height: 30px;
+  width: 30px;
+}
