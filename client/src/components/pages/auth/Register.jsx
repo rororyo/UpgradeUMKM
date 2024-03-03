@@ -19,9 +19,13 @@ const Register = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const result = await axios.post(apiUrl + "/register", values);
+      const result = await axios.post(apiUrl + "/register", {
+        email: values.email,
+        password: values.password,
+      });
       if (result.status === 200) {
         setNotify("Registered Successfully");
+        console.log("Registered sucessfuly")
       } else {
         setNotify("Error Registering User");
       }
@@ -45,7 +49,7 @@ const Register = () => {
         <span id="subtitle-text">Buat akun dan rasakan manfaatnya!</span>
         <div className="container mt-5" id="auth-container">
 <p className="text-center" id="auth-text">Register</p>
-          <div style={{ minHeight: "45vh" }} className="mt-5 d-flex flex-row">
+          <div style={{ minHeight: "45vh" }} className="mt-2 d-flex flex-row">
             <form className="ms-4 col-5 d-flex flex-column" onSubmit={handleSubmit}>
               <label htmlFor="email" className="label-text">Email</label>
               <input
@@ -84,7 +88,7 @@ const Register = () => {
 
             <div className="col-1 d-flex flex-column align-items-center ms-3">
             <span id="or-text">OR</span>
-            <div class="vertical-line"></div>
+            <div className="vertical-line"></div>
 
             </div>
             <div className="col-5">

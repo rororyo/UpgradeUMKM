@@ -23,10 +23,8 @@ export const isLoggedin = (req) => {
 
 authApp.post("/register", async (req, res) => {
     const email = req.body.email;
-    const username=req.body.username
     const password = req.body.password;
     const client = req.dbClient;
-
     try {
         const checkResult = await client.query("SELECT * FROM users WHERE email = $1", [email]);
 
@@ -47,7 +45,7 @@ authApp.post("/register", async (req, res) => {
 });
 
 authApp.post("/login", async (req, res) => {
-    const email = req.body.username;
+    const email = req.body.email;
     const password = req.body.password;
     const client = req.dbClient;
 

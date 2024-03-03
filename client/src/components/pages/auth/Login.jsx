@@ -5,7 +5,7 @@ import Navbar from '../../partials/Navbar.jsx';
 const Login = () => {
     const apiUrl="http://localhost:4000";
     const [loginDetails, setLoginDetails] = useState({
-      username: "",
+      email: "",
       password: "",
     })
     const navigate=useNavigate()
@@ -38,60 +38,65 @@ const Login = () => {
       }
     }
   return (
-    <>
-    <Navbar />
-    <div className="container mt-5">
-      <h1>Login</h1>
-
-      <div className="row">
-        <div className="col-sm-8">
-          <div className="card">
-            <div className="card-body">
-              {/* Makes POST request to /login route */}
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    name="username"
-                    onChange={(e) =>{
-                        setLoginDetails({
-                            ...loginDetails,
-                            username:e.target.value
-                        })
-                    }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    name="password"
-                    onChange={(e) =>{
-                        setLoginDetails({
-                            ...loginDetails,
-                            password:e.target.value
-                        })
-                    }}
-                  />
-                </div>
-                <div className="d-flex mt-3">
-                <button type="submit" className="btn btn-dark mt-3">
-                  Login
-                </button>
-                <Link to="/register" className='btn btn-dark mt-3 ms-3'>Register</Link>
-                </div>
-
-              </form>
+<div
+      style={{
+        backgroundImage: 'url("/assets/images/auth/authbg.png")',
+        minHeight: "100vh",
+      }}
+    >
+      <Navbar />
+      <div
+        className="d-flex flex-column align-items-center justify-content-center"
+        style={{ minHeight: "85vh" }}
+      >
+        <span id="title-text">Siap upgrade usaha anda?</span>
+        <span id="subtitle-text">Buat akun dan rasakan manfaatnya!</span>
+        <div className="container mt-4" id="auth-container">
+<p className="text-center" id="auth-text">Login</p>
+          <div style={{ minHeight: "45vh" }} className="mt-4 d-flex flex-row">
+            <form className="ms-4 col-5 d-flex flex-column" onSubmit={handleSubmit}>
+              <label htmlFor="email" className="label-text">Email</label>
+              <input
+                type="email"
+                className="auth-input form-control"
+                name="email"
+                onChange={(e) =>
+                  setLoginDetails({ ...loginDetails, email: e.target.value })
+                }
+                placeholder="Enter your email" required
+              />
+              <label htmlFor="password" className="label-text mt-4">Password</label>
+              <input
+                type="password"
+                className="form-control auth-input"
+                name="password"
+                onChange={(e) =>
+                  setLoginDetails({ ...loginDetails, password: e.target.value })
+                }
+                placeholder="Enter your password" required
+              />
               
+               <button type="submit" className="btn mt-4"style={{minWidth:"95%"}} id="submit-button">
+                      <span id='submit-label'>Login</span>
+                    </button>
+            </form>
+
+            <div className="col-1 d-flex flex-column align-items-center ms-3">
+            <span id="or-text">OR</span>
+            <div className="vertical-line"></div>
+
+            </div>
+            <div className="col-5">
+<button className="auth-btn btn d-flex align-items-center">
+  <span id="third-party-label">Login with Google</span>
+  <img src="/assets/images/auth/googleLogo.jpeg" className="auth-logo ms-auto" />
+</button>
             </div>
           </div>
+
         </div>
       </div>
     </div>
-    </>
   );
 };
 
