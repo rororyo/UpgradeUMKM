@@ -53,7 +53,7 @@
 
 .auth-input {
   min-width: 95%;
-  height: 3.2rem;
+  min-height: 4.5vh;
   background-color: #c3c3c3 !important;
   border-radius: 10px;
   outline: none !important ;
@@ -75,7 +75,7 @@
 
 .auth-btn {
   min-width: 95%;
-  height: 3.2rem;
+  height: 4.5vh;
   border-radius: 10px;
   margin-top: 27px !important;
   background-color: white !important;
