@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../partials/Navbar.jsx";
+import GoogleSignIn from "./GoogleSignIn.jsx";
 const Login = () => {
   const apiUrl = "http://localhost:4000";
   const [notify, setNotify] = useState("");
@@ -110,13 +111,7 @@ const Login = () => {
               <div className="vertical-line"></div>
             </div>
             <div className="col-5">
-              <button className="auth-btn btn d-flex align-items-center">
-                <span id="third-party-label">Login with Google</span>
-                <img
-                  src="/assets/images/auth/googleLogo.jpeg"
-                  className="auth-logo ms-auto"
-                />
-              </button>
+             <GoogleSignIn />
             </div>
           </div>
         </div>
